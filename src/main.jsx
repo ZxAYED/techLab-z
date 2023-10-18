@@ -14,6 +14,10 @@ import AddPRoducts from './assets/components/Products/AddPRoducts';
 import MyCart from './assets/components/Products/MyCart';
 import Login from './assets/components/Authentication/Login';
 import NewProducts from './assets/components/Products/NewProducts';
+import SignUp from './assets/components/Authentication/SignUp';
+import BrandProducts from './assets/components/Home/BrandProducts';
+import BrandData from './assets/components/Home/BrandData';
+import { AuthContext } from './assets/components/Authentication/AuthProvider';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,7 +26,8 @@ const router = createBrowserRouter([
     children:[
       {
       path:'/',
-      element:<Home></Home>
+      element:<Home></Home>,
+      loader:()=>{ return fetch('http://localhost:5001/brandProducts')}
     },
       {
       path:'/AddProducts',
@@ -37,6 +42,18 @@ const router = createBrowserRouter([
       element:<Login/>
     },
       {
+      path:'/SignUp',
+      element:<SignUp/>
+    },
+      {
+      path:'/brandProducts/:id',
+      element:<BrandData><BrandProducts/></BrandData>,
+      // loader:({params})=>{
+      //  return fetch()
+      // }
+     
+    },
+      {
       path:'/NewProducts',
       element:<NewProducts/>,
       loader:()=>{
@@ -48,6 +65,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthContext.Provider>
   <RouterProvider router={router} />
+  </AuthContext.Provider>
   </React.StrictMode>,
 )
