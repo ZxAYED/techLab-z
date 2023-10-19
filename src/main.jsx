@@ -17,7 +17,8 @@ import NewProducts from './assets/components/Products/NewProducts';
 import SignUp from './assets/components/Authentication/SignUp';
 import BrandProducts from './assets/components/Home/BrandProducts';
 import BrandData from './assets/components/Home/BrandData';
-import { AuthContext } from './assets/components/Authentication/AuthProvider';
+import AuthProvider, { AuthContext } from './assets/components/Authentication/AuthProvider';
+import PrivateRoute from './assets/components/Authentication/PrivateRoute';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
     },
       {
       path:'/MyCart',
-      element:<MyCart/>
+      element:<PrivateRoute><MyCart/></PrivateRoute> 
     },
       {
       path:'/Login',
@@ -45,13 +46,11 @@ const router = createBrowserRouter([
       path:'/SignUp',
       element:<SignUp/>
     },
-      {
+      { 
       path:'/brandProducts/:id',
-      element:<BrandData><BrandProducts/></BrandData>,
-      // loader:({params})=>{
-      //  return fetch()
-      // }
-     
+      element:<BrandProducts/>,
+      loader:({params})=>{return fetch(`http://localhost:5001/brandProducts/${params.id}`)}
+      
     },
       {
       path:'/NewProducts',
@@ -65,8 +64,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthContext.Provider>
+    <AuthProvider>
   <RouterProvider router={router} />
-  </AuthContext.Provider>
+  </AuthProvider>
   </React.StrictMode>,
 )

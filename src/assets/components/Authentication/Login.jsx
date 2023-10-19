@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -58,7 +59,7 @@ const Login = () => {
                                 <div className=" flex justify-center mt-6 ">
                                     <button className="btn lowerCase bg-[#FCB100]" type="submit"> Login</button>
                                 </div>
-
+                                <p className="py-4  text-center ">Already have an account? Click here to <Link to='/SignUp'><span className="font-bold text-purple-600"> Register </span></Link> </p>
 
                             </form>
 

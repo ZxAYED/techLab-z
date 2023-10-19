@@ -1,5 +1,6 @@
-
-import banner from '../../imgaes/banner.jpg'
+import img from'../../imgaes/banner 3.png'
+import img2 from'../../imgaes/banner 4.png'
+import banner from '../../imgaes/banner 2.png'
 import { useEffect } from 'react'
 
 import 'aos/dist/aos.css';
@@ -28,7 +29,12 @@ const Home = () => {
         }
 
       </section>
-
+        <div className='max-w-7xl mx-auto mt-10 '>
+        <img className='rounded shadow-xl' src={img} alt="" />
+        </div>
+        <div className='max-w-7xl mx-auto mt-10 '>
+        <img className='rounded' src={img2} alt="" />
+        </div>
     </div>
   );
 };

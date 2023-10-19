@@ -14,8 +14,8 @@ const BrandData = ({id,image,children}) => {
              < Link onClick={()=>handleId(id)} to={`/brandProducts/${id}`}>
              <div className=''>
               <div className="overflow-hidden">
-                <div className="  text-white bg-center transition-transform  scale-100 hover:scale-105  duration-700 " >
-                  <img className='h-32 w-36   hover:[rounded-xl] rounded-[50%]  object-fit' src={image} alt="" />
+                <div className="  text-white bg-center transition-transform  scale-100 hover:scale-110  duration-700 " >
+                  <img className='h-32 w-36  hover:[rounded-xl ,shadow-xl ] rounded-[50%]  object-fit' src={image} alt="" />
 
 
                 </div>

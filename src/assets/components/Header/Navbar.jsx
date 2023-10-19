@@ -1,13 +1,12 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../Authentication/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const {user,logOut}=useContext(AuthContext)
     const navbars=<>
     <div className="flex gap-3 text-[#FCB100] font-semibold  ">
-{/*     
-    className={({ isActive, isPending }) =>
-   isPending ? "pending" : isActive ? "text-[#FCB100] bg-slate-200" : ""} */}
-
-
     <li > <NavLink to='/'>Home</NavLink></li>
     <li> <NavLink to='/MyCart'>My cart</NavLink></li>
     <li> <NavLink to='/AddProducts'>Add products</NavLink></li>  
@@ -15,10 +14,22 @@ const Navbar = () => {
     <li> <NavLink to='/SignUp'>Sign Up  </NavLink></li>
    
     </div>
-    
-    
     </>
-
+const handleSignOut=()=>{
+  logOut()
+  .then()
+  .catch()
+  toast.success('User Sign out SuccessFully!', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    });
+ }
     return (
         <div className="mt-3 h-20">
             
@@ -58,7 +69,12 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <NavLink to='/Login'> <button className="btn bg-[#FCB100]"> Login</button> </NavLink>
+    {
+      user? <button onClick={handleSignOut} className="btn bg-[#FCB100] rounded-md ">Sign Out</button>:<NavLink to='/Login'> <button className="btn bg-[#FCB100]"> Login</button> </NavLink>
+    }
+    
+  
+  
   </div>
 </div>
 
