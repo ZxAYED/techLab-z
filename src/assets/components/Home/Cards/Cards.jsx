@@ -40,7 +40,7 @@ const Cards = ({product}) => {
 
       <div className="flex justify-between">
         <Link to={`/details/${name}`}> <button  onClick={()=>handleGo(name)} className="btn absolute bottom-2  right-5 btn-danger">Details</button></Link>
-       <Link to={`/update/${name}`}><button onClick={()=>handleUp(name)} className="btn absolute bottom-2 left-2 btn-danger">Update</button></Link>
+       <Link to={'/update/'}><button onClick={()=>handleUp(name)} className="btn absolute bottom-2 left-2 btn-danger">Update</button></Link>
         </div>
     </div>
     </div>

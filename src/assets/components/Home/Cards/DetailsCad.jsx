@@ -5,14 +5,30 @@ import Swal from "sweetalert2";
 const DetailsCad = ({items}) => {
     
     const {brandName,image,name,price,rating,type,description,features} =items
- const handleGo=(name)=>{
-    console.log(name);
-    Swal.fire({
-        title: 'Successful!',
-        text: 'Item added Successfully',
-        icon: 'success',
-        confirmButtonText: 'OK'
-      })
+ const handleGo=(items)=>{
+  
+     
+            fetch('http://localhost:5001/MyCart',{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body:JSON.stringify(items)
+            }  )
+            .then(res=>res.json())
+            .then(data=>{Swal.fire({
+                title: 'Item added !',
+                text: 'Successfully!',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+            .catch(err=>{
+                 Swal.fire({
+                title: 'Error!',
+                text: err.message,
+                icon: 'error',
+                confirmButtonText: 'Cool'
+                 })})})
  }
     
     return (
@@ -40,7 +56,7 @@ const DetailsCad = ({items}) => {
            
             </div>
             <div className="mb-10 flex justify-center items-center w-1/4 mx-auto  ">
-             <button   onClick={()=>handleGo(name)} className="btn w-full lowerCase bg-[#FCB100]">Add to Cart</button></div>
+             <button   onClick={()=>handleGo(items)} className="btn w-full lowerCase bg-[#FCB100]">Add to Cart</button></div>
             </div>
 
             

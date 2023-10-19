@@ -46,20 +46,22 @@ const Allproducts = ({ product }) => {
 
     return (
 
+<div data-aos="fade-right" className="relative h-[70vh] md:h-[500px] mx-10 md:mx-0 overflow-hidden rounded-lg shadow-md bg-[#FCB100] ">
+        <img className="object-cover h-60 w-full " src={image} alt="Article" /> 
 
-        <div className="relative h-[70vh] md:h-[500px] mx-10 md:mx-0 overflow-hidden rounded-lg shadow-md bg-[#FCB100]">
-            <img className="object-cover h-70 w-full " src={image} alt="Article" />
-
-            <div className="p-6">
-                <div>
-                    <span className="text-xs font-medium  uppercase  "> {Rating}</span>
-                    <a href="#" className="block mt-2 text-2xl font-semibold  transition-colors duration-300 transform text-white  " role="link"> {description}</a>
-                    <p className="mt-2 text-sm  hover:underline ">{Category}</p>
-                    <div className='flex justify-between items-center gap-4'>
-                    <p className="mt-2 text-sm  hover:underline ">{brand}</p>
-                    <p className="mt-2 text-sm  hover:underline ">{price}</p>
-                    </div>
+        <div className="p-6 ">
+            <div>
+              
+                <p className="">  Brand: <span className="font-medium text-white "> { brand}</span> </p>
+                <a href="#" className="block mt-2 text-2xl font-semibold  transition-colors duration-300 transform text-white  " role="link"> {description}</a>
+                <p className="mt-2 text-sm  ">Category : <span className="font-medium  hover:underline text-purple-600 "> { Category}</span> </p>
+                <p className="mt-2 text-sm    "> Product ID : {_id } $</p>
+                <div className='flex justify-between items-center gap-4'>
+               
+                <p className="mt-2 text-sm    "> Price : {price } $</p>
+                <p className="mt-2 text-sm   ">  Avarage Rating: <span className="font-medium  hover:underline text-purple-600 "> {Rating}  </span>  </p>
                 </div>
+            </div>
 
 
 

@@ -18,7 +18,7 @@ const SignUp = () => {
             const Password = form.Password.value;
             if(/^(?=.*[A-Z])(?=.*[\W_]).{7,}$/.test(Password)
             ){
-                return Swal.fire({
+               return  Swal.fire({
                     title: 'Error!',
                     text: 'The password is less than 6 characters or dont have a capital letter or dont have a special character',
                     icon: 'error',
@@ -43,7 +43,7 @@ const SignUp = () => {
                 .then(data=>{
                     setUsers(data)
                    
-                        Swal.fire({
+                       return Swal.fire({
                             title: 'Success!',
                             text: 'Successfully added a new user',
                             icon: 'success',
@@ -51,7 +51,7 @@ const SignUp = () => {
                           })
                           .catch(err=>{console.error(err)
                             setError(err)
-                            Swal.fire({
+                          return  Swal.fire({
                                 title: 'Error!',
                                 text: error.message,
                                 icon: 'error',
@@ -65,7 +65,7 @@ const SignUp = () => {
             })
             .catch(err=>{console.error(err)
             setError(err)
-            Swal.fire({
+          return  Swal.fire({
                 title: 'Error!',
                 text: error.message,
                 icon: 'error',
@@ -137,7 +137,7 @@ const SignUp = () => {
                                             className="w-full p-3 borderborder-gray-300 rounded"
                                             placeholder="Type here..."
                                         /></div>
-                                        <p>(The password must contains more than 6 characters or atleast have a capital letter or  have a special character)</p>
+                                        <p>(The password must contains more than 6 characters or atleast have a capital letter and cant have a special character)</p>
     
     
                                     <div className=" flex justify-center mt-6 ">

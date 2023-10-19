@@ -21,6 +21,7 @@ import AuthProvider, { AuthContext } from './assets/components/Authentication/Au
 import PrivateRoute from './assets/components/Authentication/PrivateRoute';
 import Details from './assets/components/Home/Cards/Details';
 import Update from './assets/components/Products/Update';
+import About from './assets/components/Header/About';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,13 +40,14 @@ const router = createBrowserRouter([
       {
       path:'/MyCart',
       element:<PrivateRoute><MyCart/></PrivateRoute> ,
-      loader:({params})=>{ return fetch(`http://localhost:5001/update/${params.id}`)
-    },
+      loader:()=>{ return fetch('http://localhost:5001/MyCart')
+    }},
       {
       path:'/Login',
       element:<Login/>
    
-    },{
+      },
+    {
       path:'/details/:id',
       element:<Details/>,
       loader:({params})=>{ return fetch(`http://localhost:5001/details/${params.id}`)
@@ -54,11 +56,15 @@ const router = createBrowserRouter([
       path:'/SignUp',
       element:<SignUp/>
     },
+     {
+      path:'/about',
+      element:<About/>
+    },
     {
-      path:'/update/:id',
+      path:'/update',
       element:<PrivateRoute><Update/></PrivateRoute>,
-      loader:({params})=>{ return fetch(`http://localhost:5001/details/${params.id}`)
-    }
+    //   loader:({params})=>{ return fetch(`http://localhost:5001/details/${params.id}`)
+    // }
     },
       { 
       path:'/brandProducts/:id',

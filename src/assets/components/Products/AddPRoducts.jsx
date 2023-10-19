@@ -43,7 +43,7 @@ const AddPRoducts = () => {
                     <div className="bg-[#FCB100]   rounded-lg shadow-xl ">
 
                         <div className="p-8 ">
-                            <form onSubmit={handleAdd} className=" " >
+                            <form onSubmit={handleAdd}  >
 
 
                                 <section className="grid grid-cols-2  gap-5
@@ -60,7 +60,7 @@ const AddPRoducts = () => {
                                             type="text"
                                             name="Image"
                                         required
-                                            className="w-full p-3 borderborder-gray-300 rounded"
+                                            className="w-full p-3 border-gray-300 rounded"
                                             placeholder="Type here..."
                                         /></div>
                                     <div className="mb-6"><label
@@ -73,7 +73,7 @@ const AddPRoducts = () => {
                                             type="text"
                                             name="description"
                                             required
-                                            className="w-full p-3 borderborder-gray-300 rounded"
+                                            className="w-full p-3 border-gray-300 rounded"
                                             placeholder="Type here..."
                                         /></div>
                                     <div className="mb-6"><label
@@ -100,7 +100,7 @@ const AddPRoducts = () => {
                                             type="text"
                                             name="price"
                                             required
-                                            className="w-full p-3 borderborder-gray-300 rounded"
+                                            className="w-full p-3 border-gray-300 rounded"
                                             placeholder="Type here..."
                                         /></div>
 
@@ -114,7 +114,7 @@ const AddPRoducts = () => {
                                             type="text"
                                             name="Category"
                                             required
-                                            className="w-full p-3 borderborder-gray-300 rounded"
+                                            className="w-full p-3 border-gray-300 rounded"
                                             placeholder="Type here..."
                                         /></div>
 
@@ -128,7 +128,7 @@ const AddPRoducts = () => {
                                             type="text"
                                             name="Rating"
                                             required
-                                            className="w-full p-3 borderborder-gray-300 rounded"
+                                            className="w-full p-3 border-gray-300 rounded"
                                             placeholder="Type here..."
                                         /></div>
 
