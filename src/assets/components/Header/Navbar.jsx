@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Authentication/AuthProvider";
-import  '../Root/Root.css'
+
 import png from '../../imgaes/trolley.png'
 import Swal from "sweetalert2";
-import { useState } from "react";
+
 
 const Navbar = () => {
 
