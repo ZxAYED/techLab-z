@@ -5,7 +5,7 @@ import CartProducts from "./CartProducts";
 
 
 const MyCart = () => {
-    const [user, setUser] =useState()
+  
   const users=useLoaderData()
    
 
