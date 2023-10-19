@@ -1,16 +1,24 @@
 import { Children, createContext, useState } from "react";
 import { Link } from "react-router-dom";
 import BrandProducts from "./BrandProducts";
-
+import 'aos/dist/aos.css'; 
+import AOS from 'aos';
+import { useEffect } from "react";
 export const NewContext =createContext()
 const BrandData = ({id,image,children}) => {
     const[data ,setData]=useState(id)
+    useEffect(()=>{
+       
+      AOS.init();
     
+        },[])
     const handleId=id=>{
         setData(id)
        }
     return (
-        <div>
+        <div data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000">
              < Link onClick={()=>handleId(id)} to={`/brandProducts/${id}`}>
              <div className=''>
               <div className="overflow-hidden">
@@ -25,9 +33,7 @@ const BrandData = ({id,image,children}) => {
               
             </div>
             </Link>
-            <NewContext.Provider value={id}>
-                {children}
-            </NewContext.Provider>
+           
 
         </div>
         

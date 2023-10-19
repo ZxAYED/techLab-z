@@ -16,6 +16,15 @@ const SignUp = () => {
           
             const Email = form.Email.value;
             const Password = form.Password.value;
+            if(/^(?=.*[A-Z])(?=.*[\W_]).{7,}$/.test(Password)
+            ){
+                return Swal.fire({
+                    title: 'Error!',
+                    text: 'The password is less than 6 characters or dont have a capital letter or dont have a special character',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
+            }
             const Image = form.Image.value;
             const Name = form.Name.value;
             
@@ -33,12 +42,12 @@ const SignUp = () => {
                 .then(res=>res.json())
                 .then(data=>{
                     setUsers(data)
-                    if(data.insertedId){
+                   
                         Swal.fire({
                             title: 'Success!',
                             text: 'Successfully added a new user',
                             icon: 'success',
-                            confirmButtonText: 'Cool'
+                            confirmButtonText: 'Ok'
                           })
                           .catch(err=>{console.error(err)
                             setError(err)
@@ -49,7 +58,7 @@ const SignUp = () => {
                                 confirmButtonText: 'OK'
                               })})
                 
-                    }
+                    
                     
 
                 })
@@ -128,6 +137,7 @@ const SignUp = () => {
                                             className="w-full p-3 borderborder-gray-300 rounded"
                                             placeholder="Type here..."
                                         /></div>
+                                        <p>(The password must contains more than 6 characters or atleast have a capital letter or  have a special character)</p>
     
     
                                     <div className=" flex justify-center mt-6 ">

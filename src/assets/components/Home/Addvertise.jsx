@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const images = [
   'https://i.ibb.co/RYcvFLQ/electronics-2.jpg',
@@ -18,13 +18,13 @@ const Addvertise = () => {
   }, []);
 
   return (
-    <div className="relative w-[40vw] h-[40vh]  my-10">
+    <div>
+    <div className="relative w-[40vw] h-[40vh]  mb-10">
       {images.map((image, index) => (
         <div
           key={index}
-          className={`absolute w-full h-full transition-opacity duration-1000 ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute w-full h-full transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <img
             src={image}
@@ -33,6 +33,7 @@ const Addvertise = () => {
           />
         </div>
       ))}
+      </div>
     </div>
   );
 };

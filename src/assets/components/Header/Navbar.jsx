@@ -2,13 +2,14 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Authentication/AuthProvider";
 import toast from "react-hot-toast";
+import png from '../../imgaes/trolley.png'
 
 const Navbar = () => {
   const {user,logOut}=useContext(AuthContext)
     const navbars=<>
     <div className="flex gap-3 text-[#FCB100] font-semibold  ">
     <li > <NavLink to='/'>Home</NavLink></li>
-    <li> <NavLink to='/MyCart'>My cart</NavLink></li>
+    <li> <NavLink to='/MyCart'>My cart  <img src={png} className="h-4" alt="" /></NavLink></li>
     <li> <NavLink to='/AddProducts'>Add products</NavLink></li>  
     <li> <NavLink to='/NewProducts'>New Products </NavLink></li>
     <li> <NavLink to='/SignUp'>Sign Up  </NavLink></li>

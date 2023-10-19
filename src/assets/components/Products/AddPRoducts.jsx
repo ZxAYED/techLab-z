@@ -34,7 +34,7 @@ const AddPRoducts = () => {
     }
     return (
         <div>
-            <div className="flex items-center justify-center  p-6  ">
+            <div className="flex max-w-5xl mx-auto items-center justify-center  p-6  ">
                 <div className="w-full ">
                     <div className="text-3xl font-semibold text-center  mb-6">
                         Want to Add a new Product?

@@ -19,6 +19,8 @@ import BrandProducts from './assets/components/Home/BrandProducts';
 import BrandData from './assets/components/Home/BrandData';
 import AuthProvider, { AuthContext } from './assets/components/Authentication/AuthProvider';
 import PrivateRoute from './assets/components/Authentication/PrivateRoute';
+import Details from './assets/components/Home/Cards/Details';
+import Update from './assets/components/Products/Update';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,19 +34,31 @@ const router = createBrowserRouter([
     },
       {
       path:'/AddProducts',
-      element:<AddPRoducts/>
+      element:<PrivateRoute><AddPRoducts/></PrivateRoute>
     },
       {
       path:'/MyCart',
-      element:<PrivateRoute><MyCart/></PrivateRoute> 
+      element:<PrivateRoute><MyCart/></PrivateRoute> ,
+      loader:({params})=>{ return fetch(`http://localhost:5001/update/${params.id}`)
     },
       {
       path:'/Login',
       element:<Login/>
+   
+    },{
+      path:'/details/:id',
+      element:<Details/>,
+      loader:({params})=>{ return fetch(`http://localhost:5001/details/${params.id}`)
     },
-      {
+     } ,{
       path:'/SignUp',
       element:<SignUp/>
+    },
+    {
+      path:'/update/:id',
+      element:<PrivateRoute><Update/></PrivateRoute>,
+      loader:({params})=>{ return fetch(`http://localhost:5001/details/${params.id}`)
+    }
     },
       { 
       path:'/brandProducts/:id',
