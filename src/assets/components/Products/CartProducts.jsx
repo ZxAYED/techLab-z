@@ -1,7 +1,7 @@
 
 const CartProducts = ({user}) => {
     console.log(user);
-    const {brandName,name,image,price,rating,type,description}=user
+    const {name,image,price,rating,type,description}=user
     return (
         <div>
                        <div data-aos="flip-left"
