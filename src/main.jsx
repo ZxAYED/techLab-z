@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
       path:'/',
       element:<Home></Home>,
-      loader:()=>{ return fetch('http://localhost:5001/brandProducts')}
+      loader:()=>{ return fetch('https://tech-f9vdvtc2k-zayeds-projects.vercel.app/brandProducts')}
     },
       {
       path:'/AddProducts',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
       path:'/MyCart',
       element:<PrivateRoute><MyCart/></PrivateRoute> ,
-      loader:()=>{ return fetch('http://localhost:5001/MyCart')
+      loader:()=>{ return fetch('https://tech-f9vdvtc2k-zayeds-projects.vercel.app/MyCart')
     }},
       {
       path:'/Login',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     {
       path:'/details/:id',
       element:<Details/>,
-      loader:({params})=>{ return fetch(`http://localhost:5001/details/${params.id}`)
+      loader:({params})=>{ return fetch(`https://tech-f9vdvtc2k-zayeds-projects.vercel.app/details/${params.id}`)
     },
      } ,{
       path:'/SignUp',
@@ -63,20 +63,20 @@ const router = createBrowserRouter([
     {
       path:'/update',
       element:<PrivateRoute><Update/></PrivateRoute>,
-    //   loader:({params})=>{ return fetch(`http://localhost:5001/details/${params.id}`)
+    //   loader:({params})=>{ return fetch(`https://tech-f9vdvtc2k-zayeds-projects.vercel.app/details/${params.id}`)
     // }
     },
       { 
       path:'/brandProducts/:id',
       element:<BrandProducts/>,
-      loader:({params})=>{return fetch(`http://localhost:5001/brandProducts/${params.id}`)}
+      loader:({params})=>{return fetch(`https://tech-f9vdvtc2k-zayeds-projects.vercel.app/brandProducts/${params.id}`)}
       
     },
       {
       path:'/NewProducts',
       element:<NewProducts/>,
       loader:()=>{
-       return fetch('http://localhost:5001/newproduct')
+       return fetch('https://tech-f9vdvtc2k-zayeds-projects.vercel.app/newproduct')
       }
     },
   ]

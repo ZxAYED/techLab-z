@@ -21,7 +21,7 @@ const Allproducts = ({ product }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5001/newproduct/${id}`, {
+                fetch(`https://tech-f9vdvtc2k-zayeds-projects.vercel.app/newproduct/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

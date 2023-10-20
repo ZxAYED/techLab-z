@@ -32,7 +32,7 @@ const SignUp = () => {
             .then(res=>{
             
                 const user ={Email}
-                fetch('http://localhost:5001/users',{
+                fetch('https://tech-f9vdvtc2k-zayeds-projects.vercel.app/users',{
                     method:'POST',
                     headers:{
                         'content-type':'application/json'

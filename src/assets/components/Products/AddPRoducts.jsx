@@ -16,7 +16,7 @@ const AddPRoducts = () => {
         const Rating=form.Rating.value;
         const newproduct ={image,description,brand,price,Category,Rating}
          console.log(newproduct);
-        fetch('http://localhost:5001/NewProduct',{
+        fetch('https://tech-f9vdvtc2k-zayeds-projects.vercel.app/NewProduct',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
